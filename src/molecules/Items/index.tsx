@@ -4,8 +4,6 @@ import {ItemsProps} from './types';
 import {Avatar, Card, TextCustom} from '../../atoms';
 
 const Items: React.FC<ItemsProps> = ({navigation, item}) => {
-  console.log(item);
-
   return (
     <Card action={() => navigation.navigate('Details', {id: item.id})}>
       <View style={styles.content}>
