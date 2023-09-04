@@ -3,9 +3,11 @@ import React, {memo} from 'react';
 import {ItemsProps} from './types';
 import {Avatar, Card, TextCustom} from '../../atoms';
 
-const Items: React.FC<ItemsProps> = ({item}) => {
+const Items: React.FC<ItemsProps> = ({navigation, item}) => {
+  console.log(item);
+
   return (
-    <Card>
+    <Card action={() => navigation.navigate('Details', {id: item.id})}>
       <View style={styles.content}>
         <Avatar source={item.avatar} size={40} />
         <View style={styles.text}>

@@ -1,12 +1,17 @@
 import React, {memo} from 'react';
-import {View, StyleSheet, Platform} from 'react-native';
+import {StyleSheet, Platform, TouchableOpacity} from 'react-native';
 
 interface CardProps {
   children: React.ReactNode;
+  action: () => void;
 }
 
-const Card: React.FC<CardProps> = ({children}) => {
-  return <View style={styles.card}>{children}</View>;
+const Card: React.FC<CardProps> = ({children, action}) => {
+  return (
+    <TouchableOpacity onPress={action} style={styles.card}>
+      {children}
+    </TouchableOpacity>
+  );
 };
 
 const styles = StyleSheet.create({
